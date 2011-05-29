@@ -3,4 +3,51 @@ tuitpy
 
 A Python script for using twitter from the command line.
 
-Author: Alejandro Gómez alejandroogomez@gmail.com
+Author: Alejandro Gómez <alejandroogomez@gmail.com>
+
+
+Dependencies
+------------
+
+First, install the dependencies:
+
+http://cheeseshop.python.org/pypi/simplejson 
+http://code.google.com/p/httplib2/ 
+http://github.com/simplegeo/python-oauth2 
+
+This script uses the python-twitter library, download source from:
+
+http://code.google.com/p/python-twitter/
+
+
+Using
+-----
+
+You need some acces tokens in order to use the Twitter API and
+authenticate with your account.
+
+_CONSUMER_KEY and _CONSUMER_SECRET are application specific tokens. You'll
+have to register a Twitter app to get those. Follow this link:
+
+https://dev.twitter.com/apps
+
+After doing that, set your account _ACCES_TOKEN_KEY, _ACCES_TOKEN_SECRET
+and _USER and you can start using this script.
+
+
+License
+-------
+
+Copyright (c) 2011 Alejandro Gómez <alejandroogomez@gmail.com>
+
+Licensed under the Apache License, Version 2.0 (the 'License');
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an 'AS IS' BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
