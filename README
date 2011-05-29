@@ -14,6 +14,7 @@ First, install the dependencies:
 http://cheeseshop.python.org/pypi/simplejson 
 http://code.google.com/p/httplib2/ 
 http://github.com/simplegeo/python-oauth2 
+http://pygments.org/
 
 This script uses the python-twitter library, download source from:
 
