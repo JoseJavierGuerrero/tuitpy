@@ -23,10 +23,8 @@ __version__ = '0.1'
 import inspect
 import sys
 
-try:
-    import twitter
-except ImportError:
-    print 'Unable to find twitter-py library'
+from pygments import console
+import twitter
 
 # INSERT YOUR TOKENS HERE:
 # Twitter specific constants
@@ -177,16 +175,22 @@ def favorites(count=20, user=None):
     
 def formatTweet(status):
     user = status.user
-    name = '@%s' % user.GetScreenName()
-    date = '\t\t%s' % status.GetCreatedAt()
-    text = '\t%s' % status.GetText()
+    name = console.colorize('red', '@%s' % user.GetScreenName())
+    date = console.colorize('blue', '\t\t%s' % status.GetCreatedAt())
+    text = console.colorize('black', '\t%s' % formatText(status.GetText()))
     return '\n'.join([name + date, text])
     
 def formatMessage(status):
-    sender = '@%s' % status.GetSenderScreenName()
-    recipient = '@%s' % status.GetRecipientScreenName()
-    text = '\t%s' % status.GetText()
-    return '\n'.join([sender + ' -> ' + recipient, text])
+    sender = console.colorize('red', '@%s' % status.GetSenderScreenName())
+    recipient = console.colorize('red', '@%s' % status.GetRecipientScreenName())
+    date = console.colorize('blue', '\t\t%s' % status.GetCreatedAt())
+    arrow = console.colorize('darkgray', ' -> ')
+    text = console.colorize('black', '\t%s' % formatText(status.GetText()))
+    return '\n'.join([sender + arrow + recipient + date, text])
+
+def formatText(text):
+    # TODO
+    return text
     
 def help():
     _flags =    [
